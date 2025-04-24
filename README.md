@@ -14,5 +14,6 @@ Dataset - Paris 2024 Olympics Summer games (https://www.kaggle.com/datasets/pite
  🚀 Strengthened hands-on knowledge of modern Azure data engineering workflows.  
  🎷Gained practical experience in data lake architecture, governance, and streaming.    
 
-   Project Architecture
+   Project Architecture  
+    
  ![Archiecture of Azure End to End Project](https://github.com/shrishtibit/AzureProjectWithCICD/blob/main/Project%20Architecture.jpg)
