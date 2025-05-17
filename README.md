@@ -31,7 +31,7 @@ Dynamic Copy Activity:
 
 -The raw data is now securely stored and ready for transformation.    
 
-![image](https://github.com/user-attachments/assets/0d6f965d-cbc4-48c0-83a1-c81e4721f40c)   
+![image](https://github.com/user-attachments/assets/0d6f965d-cbc4-48c0-83a1-c81e4721f40c)     
 
 **Step 3: Data Transformation with Azure Databricks** 🔄      
 Using Azure Databricks, the raw data from the bronze container was transformed into a structured format.       
@@ -72,7 +72,9 @@ Saved the transformed data in the silver container in Parquet format for optimal
 
   ![image](https://github.com/user-attachments/assets/435797e2-8508-4382-b127-a6c6227a7701)
 
+**Step 5- Automating the entire workflow using CI/CD via Azure DevOps, minimizing manual effort and enabling scalable real-time data processing.**
 
+![image](https://github.com/user-attachments/assets/f6e573db-4e05-4404-9dab-1a3a7afa48ec)  
 
 
 
