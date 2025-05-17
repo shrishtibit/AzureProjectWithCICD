@@ -74,9 +74,11 @@ Saved the transformed data in the silver container in Parquet format for optimal
 
 ![image](https://github.com/user-attachments/assets/f6e573db-4e05-4404-9dab-1a3a7afa48ec)  
 
-
-
-
+**Key Takeaways**
+- Built an end-to-end Azure Data Engineering solution integrating Azure Data Factory, Azure DevOps, and Databricks with Unity Catalog.
+- Developed dynamic, parameterized pipelines in ADF to ingest CSV files directly from GitHub API into Azure Data Lake (Bronze layer).
+- Performed data transformations in Databricks, including null handling, type conversion, deduplication, and window functions, and stored results in Delta format in the Silver layer.
+- Implemented Delta Live Table (DLT) pipelines to stream data into the Gold layer, creating curated tables. Automated the entire workflow using CI/CD via Azure DevOps, minimizing manual effort and enabling scalable, real-time data processing.
 
 
 
