@@ -1,6 +1,8 @@
 # Building an End to End Data Engineering Solution with Azure  
 I have built the End-to-end Azure Data Engineering project using the latest technologies like Azure Data Factory, Databricks, PySpark, Azure Data Lake, and CI/CD with Azure DevOps.  
-Dataset - Paris 2024 Olympics Summer games (https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games)     
+Dataset - Paris 2024 Olympics Summer games (https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games)   
+
+ # Project Architecture
 
  ![Archiecture of Azure End to End Project](https://github.com/shrishtibit/AzureProjectWithCICD/blob/main/Project%20Architecture.jpg)
 
@@ -14,5 +16,50 @@ To start, the following Azure resources were provisioned:
 - **Azure Databricks**: Performs data transformations and computations.     
     
 All resources were configured with proper Identity and Access Management (IAM) roles to ensure seamless integration and security.
-![image](https://github.com/user-attachments/assets/04f72eba-e344-49f4-b5a6-e186b13340a4)
+![image](https://github.com/user-attachments/assets/04f72eba-e344-49f4-b5a6-e186b13340a4)  
+   
+Step 2: Implementing the Data Pipeline Using ADF 🚀   
+
+Azure Data Factory (ADF) serves as the backbone for orchestrating the data pipeline.
+
+Dynamic Copy Activity:
+- ADF pulls data from GitHub using an HTTP connector and stores it in the bronze container in Azure Storage.
+- Parameters were added to the pipeline for adaptability to changes in the data source.   
+![image](https://github.com/user-attachments/assets/b86e56e0-f844-4ff9-8c31-e1d0209b5488)
+
+-The raw data is now securely stored and ready for transformation.  
+![image](https://github.com/user-attachments/assets/0d6f965d-cbc4-48c0-83a1-c81e4721f40c)   
+
+Step 3: Data Transformation with Azure Databricks 🔄      
+Using Azure Databricks, the raw data from the bronze container was transformed into a structured format.   
+![image](https://github.com/user-attachments/assets/a87ef14a-eb46-4323-a990-a5d4a77881c1)   
+
+**Key Steps**:
+- Cluster Setup: A Databricks cluster was created to process the data efficiently.
+- Data Lake Integration: Databricks connected to Azure Storage to access the raw data.
+**Transformations**
+- Replacing null values in the following columns with respective default values
+- Filtering dataframe based on multiple conditions
+- Casting columns to appropriate data types
+- Sorting dataframe based on multiple columns
+- Calculating cumulative sum of weights on specific column
+- Grouped and concatenated data to make it more usable for analysis
+![image](https://github.com/user-attachments/assets/8b702e18-ca2f-42b4-851a-2c0f1e658ebd)
+
+Created Dynamic Parameterized notebook and a Workflow job in Databricks for Data orchestration from bronze to the silver container  
+![image](https://github.com/user-attachments/assets/7f5ffbf9-940c-4008-b262-e0ffce05fa26)     
+
+![image](https://github.com/user-attachments/assets/3b5b4a0e-ee8f-4381-958b-fb1f50289fa1)
+
+
+Saved the transformed data in the silver container in Parquet format for optimal storage and query performance
+![image](https://github.com/user-attachments/assets/24d163b6-5d50-4253-8e75-4b416613cb1a)
+
+
+
+
+
+
+
+
 
