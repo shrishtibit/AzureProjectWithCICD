@@ -1,5 +1,5 @@
 # Building an End to End Data Engineering Solution with Azure  
-I have built the End-to-end Azure Data Engineering project using the latest technologies like Azure Data Factory, Databricks, PySpark, Azure Data Lake, and CI/CD with Azure DevOps.  
+I have built an end-to-end Azure Data Engineering solution integrating Azure Data Factory, Azure DevOps, and Databricks with Unity Catalog. 
 Dataset - Paris 2024 Olympics Summer games (https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games)   
 
  # Project Architecture
@@ -21,11 +21,7 @@ All resources were configured with proper Identity and Access Management (IAM) r
    
 **Step 2: Implementing the Data Pipeline Using ADF** 🚀   
 
-Azure Data Factory (ADF) serves as the backbone for orchestrating the data pipeline.
-
-Dynamic Copy Activity:
-- ADF pulls data from GitHub using an HTTP connector and stores it in the bronze container in Azure Storage.
-- Parameters were added to the pipeline for adaptability to changes in the data source.
+- Developed dynamic, parameterized pipelines in ADF to ingest CSV files directly from GitHub API into Azure Data Lake (Bronze layer). 
  
 ![image](https://github.com/user-attachments/assets/b86e56e0-f844-4ff9-8c31-e1d0209b5488)
 
@@ -34,7 +30,7 @@ Dynamic Copy Activity:
 ![image](https://github.com/user-attachments/assets/0d6f965d-cbc4-48c0-83a1-c81e4721f40c)     
 
 **Step 3: Data Transformation with Azure Databricks** 🔄      
-Using Azure Databricks, the raw data from the bronze container was transformed into a structured format.       
+- Performed data transformations in Databricks, including null handling, type conversion, deduplication, and window functions, and stored results in Delta format in the Silver layer.   
 
 **Key Steps**:
 - Cluster Setup: A Databricks cluster was created to process the data efficiently.
@@ -62,7 +58,9 @@ Saved the transformed data in the silver container in Parquet format for optimal
 
 ![image](https://github.com/user-attachments/assets/24d163b6-5d50-4253-8e75-4b416613cb1a)   
 
-**Step 4- Creating Delta Live Tables and DLT pipelines for Curated Entities in Gold Layer**  
+**Step 4- Creating Delta Live Tables and DLT pipelines for Curated Entities in Gold Layer**   
+
+- Implemented Delta Live Table (DLT) pipelines to stream data into the Gold layer, creating curated tables. 
 
 - Created Delta Live Tables in Databricks for Curated Entities
 
